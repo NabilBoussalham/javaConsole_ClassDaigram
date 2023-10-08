@@ -1,7 +1,11 @@
-class Mai{
+// 
+import Generator.DiagramGenerator;
+import Generator.PdfGenerator;
+
+public class Main{
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        
     }
 
 }
