@@ -1,0 +1,85 @@
+package Generator.Models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Daigram {
+    private static int id=1;
+    private String diagramsName;
+    private List<Class> daigram;
+
+    public String diagramsDescription;
+    public String diagramsAuthor;
+
+
+    //#region constractor
+    public Daigram() {
+        this.daigram = new ArrayList<Class>();
+        this.id+=1;
+    }
+    
+    public Daigram(String diagramsName, String diagramsDescription, String diagramsAuthor, List<Class> daigram) {
+        this.diagramsDescription = diagramsDescription;
+        this.diagramsAuthor = diagramsAuthor;
+        setDiagramsName(diagramsName);
+        this.daigram = new ArrayList<Class>();
+        this.id+=1;
+    }
+    //#endregion
+
+    //#region getter and setter
+    public static int getId() {
+        return id;
+    }
+    public String getDiagramsName() {
+        return diagramsName;
+    }
+    public void setDiagramsName(String diagramsName) {
+        if(diagramsName != null || !diagramsName.isEmpty())
+        this.diagramsName = diagramsName;
+        else throw 
+                new IllegalArgumentException("daigram is null");
+    }
+    public List<Class> getDaigram() {
+        return daigram;
+    }
+    public void setDaigram(List<Class> daigram) {
+        if(daigram != null)
+        this.daigram = daigram;
+        else throw 
+                new IllegalArgumentException("daigram is null   / List<Class> is null");
+    }
+    
+    //#endregion
+
+
+    public void addClass(Class c) {
+        if(c != null ){
+            this.daigram.add(c);
+        }
+    }
+    public void addClassIfNotExist(Class c) {
+        if(c != null ){
+            if(this.daigram.contains(c)) 
+                this.daigram.add(c);
+        }
+        
+
+        else throw 
+                new IllegalArgumentException("daigram is null");
+    }
+    public void removeClass(Class c) {
+
+        if(c != null){
+            this.daigram.remove(c);
+        }
+
+
+        else throw 
+                new IllegalArgumentException("daigram is null");
+    }
+    public void removeAllClass() {
+        this.daigram.clear();
+    }
+
+}

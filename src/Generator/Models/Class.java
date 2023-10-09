@@ -2,17 +2,19 @@ package Generator.Models;
 
 import java.util.List;
 
-public class Diagram {
+public class Class {
     private String className;
-    private List<String> attributes;
-    private List<String> methods;
     private List<Relationship> relationships;
+
+    public List<String> attributes;
+    public List<String> methods;
+    
     
     //#region constractor
-    public Diagram() {
+    public Class() {
     }
 
-    public Diagram(String className, List<String> attributes, List<String> methods, List<Relationship> relationships) {
+    public Class(String className, List<String> attributes, List<String> methods, List<Relationship> relationships) {
         this.className = className;
         this.attributes = attributes;
         this.methods = methods;
@@ -26,23 +28,11 @@ public class Diagram {
     }
 
     public void setClassName(String className) {
+        if(className == null || className.isEmpty()){
+            throw 
+                new IllegalArgumentException("className is null");
+        }
         this.className = className;
-    }
-
-    public List<String> getAttributes() {
-        return attributes;
-    }
-
-    public void setAttributes(List<String> attributes) {
-        this.attributes = attributes;
-    }
-
-    public List<String> getMethods() {
-        return methods;
-    }
-
-    public void setMethods(List<String> methods) {
-        this.methods = methods;
     }
 
     public List<Relationship> getRelationships() {
@@ -50,6 +40,10 @@ public class Diagram {
     }
 
     public void setRelationships(List<Relationship> relationships) {
+        if(relationships == null || relationships.isEmpty()){
+            throw 
+                new IllegalArgumentException("className is null");
+        }
         this.relationships = relationships;
     }
 

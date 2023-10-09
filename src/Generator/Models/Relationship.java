@@ -1,40 +1,55 @@
 package Generator.Models;
 
 public class Relationship {
-    private String targetClassName;
+    private Class targetClass;
     private String relationshipType;
-    private String multiplicity;
-    
+    private String parentMultiplicit;
+    private String childMultiplicit;
 
     //#region constractor
     public Relationship() {
     }
 
-    public Relationship(String targetClassName, String relationshipType, String multiplicity) {
-        this.targetClassName = targetClassName;
+     public Relationship(Class targetClass, String relationshipType, String parentMultiplicit, String childMultiplicit) {
+        this.targetClass = targetClass;
         this.relationshipType = relationshipType;
-        this.multiplicity = multiplicity;
+        this.parentMultiplicit = parentMultiplicit;
+        this.childMultiplicit = childMultiplicit;
     }
+    
     //#endregion
 
     //#region getter and setter
-    public String getTargetClassName() {
-        return targetClassName;
+    public Class getTargetClass() {
+        return targetClass;
     }
-    public void setTargetClassName(String targetClassName) {
-        this.targetClassName = targetClassName;
+
+    public void setTargetClass(Class targetClass) {
+        this.targetClass = targetClass;
     }
+
     public String getRelationshipType() {
         return relationshipType;
     }
+
     public void setRelationshipType(String relationshipType) {
         this.relationshipType = relationshipType;
     }
-    public String getMultiplicity() {
-        return multiplicity;
+
+    public String getParentMultiplicit() {
+        return parentMultiplicit;
     }
-    public void setMultiplicity(String multiplicity) {
-        this.multiplicity = multiplicity;
+
+    public void setParentMultiplicit(String parentMultiplicit) {
+        this.parentMultiplicit = parentMultiplicit;
+    }
+
+    public String getChildMultiplicit() {
+        return childMultiplicit;
+    }
+
+    public void setChildMultiplicit(String childMultiplicit) {
+        this.childMultiplicit = childMultiplicit;
     }
     //#endregion
     
