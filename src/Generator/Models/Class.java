@@ -14,11 +14,10 @@ public class Class {
     public Class() {
     }
 
-    public Class(String className, List<String> attributes, List<String> methods, List<Relationship> relationships) {
-        this.className = className;
+    public Class(String className, List<String> attributes, List<String> methods) {
         this.attributes = attributes;
         this.methods = methods;
-        this.relationships = relationships;
+        setClassName(className);
     }
     //#endregion
 

@@ -25,6 +25,8 @@ public class Relationship {
     }
 
     public void setTargetClass(Class targetClass) {
+        if(targetClass == null)
+        throw new IllegalArgumentException("className is null");
         this.targetClass = targetClass;
     }
 

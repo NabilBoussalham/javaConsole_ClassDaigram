@@ -52,7 +52,12 @@ public class Daigram {
     
     //#endregion
 
-
+    public void editClass(Class c, int index) {
+        if(c != null && index >= 0 && index < this.daigram.size())
+        this.daigram.set(index, c);
+        else throw 
+                new IllegalArgumentException("class is null or index not exist");
+    }
     public void addClass(Class c) {
         if(c != null ){
             this.daigram.add(c);
